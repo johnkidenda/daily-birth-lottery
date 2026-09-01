@@ -1,0 +1,229 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BirthLotteryCard",
+  "description": "v1 card: one composite life, today only. Never a named real person. Missing stays missing (null). Race/sexuality/disability only when a country-real source is attached in sources[].",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "card_id",
+    "country_iso3",
+    "country_name",
+    "weight_in_country",
+    "age_band",
+    "sex",
+    "urban_rural",
+    "income_or_consumption_ppp_band",
+    "education",
+    "occupation_class",
+    "family",
+    "housing_energy_water_internet",
+    "health_disability",
+    "religion",
+    "sexuality_or_gender_minority",
+    "country_hdi",
+    "country_life_expectancy",
+    "sources"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "description": "Stable prototype id, e.g. proto-001. Not a person name."
+    },
+    "country_iso3": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 3,
+      "description": "ISO 3166-1 alpha-3. For Kosovo use XKX if included; for Palestine PSE; for Taiwan TWN."
+    },
+    "country_name": {
+      "type": "string",
+      "description": "Short English name used on the card, not the UN formal title."
+    },
+    "weight_in_country": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "This composite's share of the country's adult-or-all-age draw mass for the prototype (not the country draw p_mix). Prototype only; v1 engine will sample from distributions instead of storing this."
+    },
+    "age_band": {
+      "type": "string",
+      "enum": ["0-4", "5-14", "15-24", "25-34", "35-44", "45-54", "55-64", "65-74", "75+"],
+      "description": "WPP 2024 age groups collapsed to these bands. Source: UN WPP 2024."
+    },
+    "sex": {
+      "type": "string",
+      "enum": ["female", "male"],
+      "description": "WPP sex. Intersex/other stays unknown in v1; do not invent a third category without a country census code."
+    },
+    "urban_rural": {
+      "type": ["string", "null"],
+      "enum": ["urban", "rural", null],
+      "description": "UN WUP. null if the country is missing from WUP."
+    },
+    "income_or_consumption_ppp_band": {
+      "type": ["string", "null"],
+      "enum": [
+        "below_300_2021ppp",
+        "300_to_420_2021ppp",
+        "420_to_830_2021ppp",
+        "above_830_2021ppp",
+        "not_in_pip",
+        null
+      ],
+      "description": "World Bank PIP consumption or income per person per day, 2021 PPP. International poverty line is $3.00; LMIC $4.20; UMIC $8.30. High-income countries often not_in_pip; leave null rather than using GDP/capita as a person-level stand-in. Do not mix 2017 PPP $2.15 into the same field."
+    },
+    "education": {
+      "type": ["object", "null"],
+      "description": "Person-level attainment band from Barro-Lee / UNESCO. null if the country-year is missing. Do not fill from HDI.",
+      "properties": {
+        "highest": {
+          "type": "string",
+          "enum": ["none", "primary", "secondary", "tertiary"]
+        },
+        "source": { "type": "string" },
+        "year": { "type": "integer" }
+      },
+      "required": ["highest", "source", "year"]
+    },
+    "occupation_class": {
+      "type": ["object", "null"],
+      "description": "ILOSTAT ISCO or status-in-employment collapsed. null if missing. Not a job title.",
+      "properties": {
+        "class": {
+          "type": "string",
+          "enum": [
+            "agriculture",
+            "industry",
+            "services",
+            "unpaid_care_or_outside_labour",
+            "unemployed",
+            "not_working_age"
+          ]
+        },
+        "source": { "type": "string" },
+        "year": { "type": "integer" }
+      },
+      "required": ["class", "source", "year"]
+    },
+    "family": {
+      "type": ["object", "null"],
+      "description": "Only fields with a country-real household survey. Omit the rest. No invented spouse/children counts.",
+      "properties": {
+        "household_size_band": {
+          "type": ["string", "null"],
+          "enum": ["1", "2-3", "4-5", "6+", null]
+        },
+        "under_18_in_household": { "type": ["boolean", "null"] },
+        "source": { "type": "string" },
+        "year": { "type": "integer" }
+      }
+    },
+    "housing_energy_water_internet": {
+      "type": "object",
+      "description": "Access flags. Each flag independently null if that indicator is missing for the country.",
+      "properties": {
+        "electricity": { "type": ["boolean", "null"] },
+        "at_least_basic_water": { "type": ["boolean", "null"] },
+        "at_least_basic_sanitation": { "type": ["boolean", "null"] },
+        "internet_user": { "type": ["boolean", "null"] },
+        "source_electricity": { "type": ["string", "null"] },
+        "source_water": { "type": ["string", "null"] },
+        "source_sanitation": { "type": ["string", "null"] },
+        "source_internet": { "type": ["string", "null"] },
+        "year_electricity": { "type": ["integer", "null"] },
+        "year_water": { "type": ["integer", "null"] },
+        "year_sanitation": { "type": ["integer", "null"] },
+        "year_internet": { "type": ["integer", "null"] }
+      },
+      "required": ["electricity", "at_least_basic_water", "at_least_basic_sanitation", "internet_user"]
+    },
+    "health_disability": {
+      "type": ["object", "null"],
+      "description": "Disability or major condition ONLY with a country-real source (IHME GBD country estimate or a named survey). Otherwise null, not 'none'.",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["none_indicated", "disability_or_chronic", "unknown"]
+        },
+        "condition_family": {
+          "type": ["string", "null"],
+          "description": "Broad GBD family (e.g. musculoskeletal, sensory, mental) if sourced; never a named diagnosis of a real person."
+        },
+        "source": { "type": ["string", "null"] },
+        "year": { "type": ["integer", "null"] }
+      },
+      "required": ["status"]
+    },
+    "religion": {
+      "type": ["object", "null"],
+      "description": "null unless Pew (or equivalent) license allows this use AND the country is in the table. Otherwise {affiliation: unknown}.",
+      "properties": {
+        "affiliation": {
+          "type": "string",
+          "enum": [
+            "christian",
+            "muslim",
+            "hindu",
+            "buddhist",
+            "jewish",
+            "folk_or_traditional",
+            "unaffiliated",
+            "other",
+            "unknown"
+          ]
+        },
+        "source": { "type": ["string", "null"] },
+        "year": { "type": ["integer", "null"] },
+        "license_ok": { "type": "boolean" }
+      },
+      "required": ["affiliation"]
+    },
+    "sexuality_or_gender_minority": {
+      "type": ["object", "null"],
+      "description": "unknown unless a country-real survey exists. Never a global percentage guess.",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["unknown", "lgb_identified", "trans_or_gender_diverse", "heterosexual_cis_indicated"]
+        },
+        "source": { "type": ["string", "null"] },
+        "year": { "type": ["integer", "null"] }
+      },
+      "required": ["status"]
+    },
+    "country_hdi": {
+      "type": ["object", "null"],
+      "properties": {
+        "value": { "type": "number", "minimum": 0, "maximum": 1 },
+        "year": { "type": "integer" },
+        "source": { "type": "string" }
+      },
+      "required": ["value", "year", "source"]
+    },
+    "country_life_expectancy": {
+      "type": ["object", "null"],
+      "description": "Period life expectancy at birth, years. WPP 2024 or UNDP HDR. Country-level context, not this composite's remaining years.",
+      "properties": {
+        "years": { "type": "number" },
+        "year": { "type": "integer" },
+        "source": { "type": "string" }
+      },
+      "required": ["years", "year", "source"]
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["field", "producer", "year", "url"],
+        "properties": {
+          "field": { "type": "string" },
+          "producer": { "type": "string" },
+          "year": { "type": "integer" },
+          "url": { "type": "string" },
+          "license": { "type": "string" }
+        }
+      }
+    }
+  }
+}
