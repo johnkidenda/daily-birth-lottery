@@ -7,7 +7,7 @@
     "age_band": "25-34",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "secondary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -88,10 +88,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -146,7 +146,7 @@
     "age_band": "15-24",
     "sex": "male",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": null,
     "occupation_class": {
       "class": "unemployed",
@@ -223,10 +223,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -274,7 +274,7 @@
     "age_band": "5-14",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": null,
     "occupation_class": {
       "class": "not_working_age",
@@ -351,10 +351,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -402,7 +402,7 @@
     "age_band": "45-54",
     "sex": "female",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "tertiary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -483,10 +483,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -541,7 +541,7 @@
     "age_band": "45-54",
     "sex": "female",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "tertiary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -622,10 +622,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=NOR&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -680,7 +680,7 @@
     "age_band": "25-34",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "tertiary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -761,10 +761,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -819,7 +819,7 @@
     "age_band": "0-4",
     "sex": "female",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": null,
     "occupation_class": {
       "class": "not_working_age",
@@ -896,10 +896,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -947,7 +947,7 @@
     "age_band": "35-44",
     "sex": "female",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "secondary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -1028,10 +1028,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -1086,7 +1086,7 @@
     "age_band": "35-44",
     "sex": "female",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "1500_to_2800_2021ppp",
     "education": {
       "highest": "tertiary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -1167,10 +1167,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($15–$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -1225,7 +1225,7 @@
     "age_band": "45-54",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "1500_to_2800_2021ppp",
     "education": {
       "highest": "secondary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -1306,10 +1306,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($15–$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=USA&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -1364,7 +1364,7 @@
     "age_band": "35-44",
     "sex": "female",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "830_to_1500_2021ppp",
     "education": {
       "highest": "none",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -1445,10 +1445,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($8.30–$15 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=BRA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=BRA&year=2023&povline=15&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -1642,7 +1642,7 @@
     "age_band": "25-34",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "1500_to_2800_2021ppp",
     "education": {
       "highest": "none",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -1723,10 +1723,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($15–$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=BRA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=BRA&year=2023&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -1920,7 +1920,7 @@
     "age_band": "35-44",
     "sex": "female",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "830_to_1500_2021ppp",
     "education": {
       "highest": "tertiary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -2001,10 +2001,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($8.30–$15 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2023,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=BRA&year=2023&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=BRA&year=2023&povline=15&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -2337,7 +2337,7 @@
     "age_band": "5-14",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "830_to_1500_2021ppp",
     "education": null,
     "occupation_class": {
       "class": "not_working_age",
@@ -2414,10 +2414,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP consumption survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($8.30–$15 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2021,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=CHN&year=2021&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=CHN&year=2021&povline=15&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -2465,7 +2465,7 @@
     "age_band": "25-34",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "1500_to_2800_2021ppp",
     "education": {
       "highest": "primary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -2546,10 +2546,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP consumption survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band ($15–$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2021,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=CHN&year=2021&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=CHN&year=2021&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -5146,7 +5146,7 @@
     "age_band": "35-44",
     "sex": "female",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "none",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -5227,10 +5227,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP consumption survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2021,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=ETH&year=2021&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=ETH&year=2021&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -5424,7 +5424,7 @@
     "age_band": "75+",
     "sex": "male",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "secondary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -5505,10 +5505,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2019,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -5563,7 +5563,7 @@
     "age_band": "5-14",
     "sex": "female",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": null,
     "occupation_class": {
       "class": "not_working_age",
@@ -5640,10 +5640,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2019,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -5691,7 +5691,7 @@
     "age_band": "25-34",
     "sex": "female",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "secondary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -5772,10 +5772,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2019,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -5830,7 +5830,7 @@
     "age_band": "45-54",
     "sex": "female",
     "urban_rural": "rural",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": {
       "highest": "tertiary",
       "source": "UNESCO UIS educational attainment rates, population 25+ (EA.1T8 / EA.2T8 / EA.5T8)",
@@ -5911,10 +5911,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2019,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {
@@ -5969,7 +5969,7 @@
     "age_band": "5-14",
     "sex": "male",
     "urban_rural": "urban",
-    "income_or_consumption_ppp_band": "above_830_2021ppp",
+    "income_or_consumption_ppp_band": "above_2800_2021ppp",
     "education": null,
     "occupation_class": {
       "class": "not_working_age",
@@ -6046,10 +6046,10 @@
         "license": "CC BY 3.0 IGO"
       },
       {
-        "field": "income_or_consumption_ppp_band",
-        "producer": "World Bank PIP income survey (national, 2021 PPP $3 / $4.20 / $8.30)",
+        "field": "income_or_consumption_ppp_band (≥$28 2021 PPP)",
+        "producer": "World Bank PIP",
         "year": 2019,
-        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=3&format=json",
+        "url": "https://api.worldbank.org/pip/v1/pip?country=ISL&year=2019&povline=28&format=json",
         "license": "CC-BY 4.0"
       },
       {

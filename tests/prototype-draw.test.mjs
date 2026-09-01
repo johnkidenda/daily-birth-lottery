@@ -103,12 +103,22 @@ assert.equal(L.formatEducationForCard(adult), L.formatEducation(adult.education)
 assert.equal(L.formatIncomeBand("below_300_2021ppp"), "under $3");
 assert.equal(L.formatIncomeBand("300_to_420_2021ppp"), "$3–$4.20");
 assert.equal(L.formatIncomeBand("420_to_830_2021ppp"), "$4.20–$8.30");
-assert.equal(L.formatIncomeBand("above_830_2021ppp"), "over $8.30");
+assert.equal(L.formatIncomeBand("830_to_1500_2021ppp"), "$8.30–$15");
+assert.equal(L.formatIncomeBand("1500_to_2800_2021ppp"), "$15–$28");
+assert.equal(L.formatIncomeBand("above_2800_2021ppp"), "$28+");
 assert.equal(L.formatIncomeBand("not_in_pip"), "not in World Bank PIP");
 assert.equal(L.formatIncomeBand(null), L.UNAVAILABLE);
+assert.ok(L.formatIncomeNote("1500_to_2800_2021ppp").includes("$28 prosperity standard"));
+assert.ok(L.formatIncomeNote("above_2800_2021ppp").includes("At or above the prosperity standard"));
+assert.ok(!L.formatIncomeNote("above_2800_2021ppp").includes("29.43"));
+assert.equal(L.formatIncomeNote("not_in_pip"), "No PIP estimate. We don’t fill with a neighbor.");
 const brn = live.find((c) => c.country_iso3 === "BRN");
 assert.ok(brn);
 assert.equal(brn.income_or_consumption_ppp_band, "not_in_pip");
 assert.equal(L.formatIncomeBand(brn.income_or_consumption_ppp_band), "not in World Bank PIP");
+const bands = new Set(live.map((c) => c.income_or_consumption_ppp_band));
+assert.ok(bands.has("1500_to_2800_2021ppp"));
+assert.ok(bands.has("830_to_1500_2021ppp"));
+assert.ok(bands.has("above_2800_2021ppp"));
 
-console.log("ok: prototype draw + education N/A + daily PIP income labels");
+console.log("ok: prototype draw + education N/A + locked $15/$28 income bands");
