@@ -1,0 +1,325 @@
+{
+  "note": "PLACEHOLDER CATALOG. Not real people. Not real statistics. Replace this file with a real catalog; keep the same card object shape.",
+  "cards": [
+    {
+      "id": "nga-001",
+      "country_iso3": "NGA",
+      "country_name": "Nigeria",
+      "weight_in_country": 0.04,
+      "age_band": "25-34",
+      "sex": "female",
+      "urban_rural": "urban",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw and in-country weights can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "nga-002",
+      "country_iso3": "NGA",
+      "country_name": "Nigeria",
+      "weight_in_country": 0.11,
+      "age_band": "35-44",
+      "sex": "male",
+      "urban_rural": "rural",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. Heavier in-country weight than nga-001 so the second draw step is testable.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "ind-001",
+      "country_iso3": "IND",
+      "country_name": "India",
+      "weight_in_country": 0.08,
+      "age_band": "15-24",
+      "sex": "female",
+      "urban_rural": "rural",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw and in-country weights can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "ind-002",
+      "country_iso3": "IND",
+      "country_name": "India",
+      "weight_in_country": 0.03,
+      "age_band": "45-54",
+      "sex": "male",
+      "urban_rural": "urban",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. Lighter in-country weight than ind-001 so the second draw step is testable.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "chn-001",
+      "country_iso3": "CHN",
+      "country_name": "China",
+      "weight_in_country": 0.07,
+      "age_band": "55-64",
+      "sex": "female",
+      "urban_rural": "urban",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "usa-001",
+      "country_iso3": "USA",
+      "country_name": "United States",
+      "weight_in_country": 0.05,
+      "age_band": "35-44",
+      "sex": "male",
+      "urban_rural": "urban",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "bra-001",
+      "country_iso3": "BRA",
+      "country_name": "Brazil",
+      "weight_in_country": 0.06,
+      "age_band": "18-24",
+      "sex": "female",
+      "urban_rural": "urban",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "eth-001",
+      "country_iso3": "ETH",
+      "country_name": "Ethiopia",
+      "weight_in_country": 0.09,
+      "age_band": "25-34",
+      "sex": "male",
+      "urban_rural": "rural",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "deu-001",
+      "country_iso3": "DEU",
+      "country_name": "Germany",
+      "weight_in_country": 0.04,
+      "age_band": "65+",
+      "sex": "female",
+      "urban_rural": "urban",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    },
+    {
+      "id": "idn-001",
+      "country_iso3": "IDN",
+      "country_name": "Indonesia",
+      "weight_in_country": 0.10,
+      "age_band": "5-14",
+      "sex": "male",
+      "urban_rural": "rural",
+      "income_or_consumption_ppp_band": "placeholder — no real income data",
+      "education": "placeholder — no real education data",
+      "occupation_class": "placeholder — not a real occupation",
+      "family": "placeholder — not a real household",
+      "housing": "placeholder — not a real dwelling",
+      "health_disability": "placeholder — no real health data",
+      "religion": "unknown",
+      "sexuality_or_gender_minority": "unknown",
+      "country_hdi": 0.0,
+      "country_life_expectancy": 0,
+      "compare_world_median": {
+        "life_expectancy": 0,
+        "consumption_ppp": 0,
+        "years_school": 0
+      },
+      "vignette": "PLACEHOLDER. Not a real person. Not real statistics. This card exists so the country draw can be tested.",
+      "sources": [
+        {
+          "label": "Placeholder — not a real source. Not a real person. Not real stats.",
+          "url": "",
+          "year": 2024
+        }
+      ]
+    }
+  ]
+}

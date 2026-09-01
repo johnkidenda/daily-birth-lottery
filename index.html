@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light" />
+    <meta
+      name="description"
+      content="Daily birth lottery — one featured life per local day. Placeholder catalog."
+    />
+    <title>Daily birth lottery</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,560&family=Source+Sans+3:wght@400;600;650&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="mast">
+        <p class="kicker">v1 mock · placeholder catalog</p>
+        <h1>Daily birth lottery</h1>
+        <p class="lede">One life, drawn for your local day.</p>
+      </header>
+
+      <section class="stats" aria-label="Local progress">
+        <div class="stat">
+          <span class="stat-label">Streak</span>
+          <span class="stat-value" id="streak-value">0</span>
+          <span class="stat-unit">days</span>
+        </div>
+        <div class="stat">
+          <span class="stat-label">Lives met</span>
+          <span class="stat-value" id="lives-value">0</span>
+          <span class="stat-unit">unique</span>
+        </div>
+      </section>
+
+      <div class="draw-row">
+        <button type="button" class="draw" id="draw-btn">Draw</button>
+        <p class="draw-hint" id="draw-hint">First draw of the day is the featured life.</p>
+      </div>
+
+      <p class="status" id="status" hidden></p>
+      <div id="card-root"></div>
+    </div>
+
+    <template id="card-template">
+      <article class="card">
+        <div class="card-flags">
+          <span class="badge badge-kind" data-kind></span>
+          <span class="badge badge-ph">Placeholder — not a real person</span>
+        </div>
+        <p class="card-date" data-date></p>
+        <h2 class="card-country" data-country></h2>
+        <p class="card-meta" data-meta></p>
+        <dl class="facts">
+          <div><dt>Income / consumption</dt><dd data-field="income_or_consumption_ppp_band"></dd></div>
+          <div><dt>Education</dt><dd data-field="education"></dd></div>
+          <div><dt>Occupation</dt><dd data-field="occupation_class"></dd></div>
+          <div><dt>Family</dt><dd data-field="family"></dd></div>
+          <div><dt>Housing</dt><dd data-field="housing"></dd></div>
+          <div><dt>Health</dt><dd data-field="health_disability"></dd></div>
+          <div><dt>Religion</dt><dd data-field="religion"></dd></div>
+          <div><dt>Sexuality / gender minority</dt><dd data-field="sexuality_or_gender_minority"></dd></div>
+        </dl>
+        <p class="vignette" data-vignette></p>
+        <section class="citations" aria-label="Citations">
+          <h3>Citations</h3>
+          <ul data-sources></ul>
+        </section>
+        <section class="vs" aria-label="Versus world median">
+          <h3>vs world median</h3>
+          <ul class="vs-slots">
+            <li>
+              <span class="vs-label">Life expectancy</span>
+              <span class="vs-value" data-vs="life_expectancy"></span>
+            </li>
+            <li>
+              <span class="vs-label">Consumption</span>
+              <span class="vs-value" data-vs="consumption_ppp"></span>
+            </li>
+            <li>
+              <span class="vs-label">Years of school</span>
+              <span class="vs-value" data-vs="years_school"></span>
+            </li>
+          </ul>
+          <p class="vs-note" data-vs-note></p>
+        </section>
+      </article>
+    </template>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
