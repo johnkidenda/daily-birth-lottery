@@ -82,4 +82,22 @@ assert.equal(
     .join(","),
   "BGD,BRA,BRN,CHN,ETH,IND,ISL,NGA,NOR,USA"
 );
-console.log("ok: prototype draw + live 50 proto-card deck");
+const na = "not applicable (UIS is ages 25+)";
+for (const band of ["0-4", "5-14", "15-24"]) {
+  assert.equal(
+    L.formatEducationForCard({ age_band: band, education: null }),
+    na
+  );
+}
+assert.equal(
+  L.formatEducationForCard({ age_band: "25-34", education: { highest: "secondary" } }),
+  "secondary"
+);
+const young = live.find((c) => ["0-4", "5-14", "15-24"].includes(c.age_band) && !c.education);
+assert.ok(young, "catalog should include a 0–24 card with null education");
+assert.equal(L.formatEducationForCard(young), na);
+const adult = live.find((c) => c.education && c.education.highest);
+assert.ok(adult);
+assert.equal(L.formatEducationForCard(adult), L.formatEducation(adult.education));
+
+console.log("ok: prototype draw + live 50 proto-card deck + education N/A copy");
