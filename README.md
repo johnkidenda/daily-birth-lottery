@@ -2,6 +2,8 @@
 
 Public mock: https://johnkidenda.github.io/daily-birth-lottery/
 
+Enable Pages if the URL is not live yet: repo Settings → Pages → Deploy from a branch → `main` / (`/`).
+
 One page. One button. One life per local calendar day. Extra rolls are allowed and labeled Extra. Streak and lives-met stay in `localStorage` only.
 
 This catalog is a placeholder. Cards are not real people and do not carry real statistics.
