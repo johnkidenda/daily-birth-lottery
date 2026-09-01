@@ -100,4 +100,15 @@ const adult = live.find((c) => c.education && c.education.highest);
 assert.ok(adult);
 assert.equal(L.formatEducationForCard(adult), L.formatEducation(adult.education));
 
-console.log("ok: prototype draw + live 50 proto-card deck + education N/A copy");
+assert.equal(L.formatIncomeBand("below_300_2021ppp"), "under $3");
+assert.equal(L.formatIncomeBand("300_to_420_2021ppp"), "$3–$4.20");
+assert.equal(L.formatIncomeBand("420_to_830_2021ppp"), "$4.20–$8.30");
+assert.equal(L.formatIncomeBand("above_830_2021ppp"), "over $8.30");
+assert.equal(L.formatIncomeBand("not_in_pip"), "not in World Bank PIP");
+assert.equal(L.formatIncomeBand(null), L.UNAVAILABLE);
+const brn = live.find((c) => c.country_iso3 === "BRN");
+assert.ok(brn);
+assert.equal(brn.income_or_consumption_ppp_band, "not_in_pip");
+assert.equal(L.formatIncomeBand(brn.income_or_consumption_ppp_band), "not in World Bank PIP");
+
+console.log("ok: prototype draw + education N/A + daily PIP income labels");
