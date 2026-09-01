@@ -179,8 +179,8 @@
 
     node.querySelector("[data-date]").textContent =
       kind === "featured"
-        ? `“Today’s featured life · ${formatDateLabel(today)}`
-        : `“Extra roll · not today’s featured life`;
+        ? `Today’s featured life · ${formatDateLabel(today)}`
+        : `Extra roll · not today’s featured life`;
 
     node.querySelector("[data-country]").textContent = card.country_name || card.country_iso3;
     node.querySelector("[data-meta]").textContent = [card.age_band, card.sex, card.urban_rural]
