@@ -265,6 +265,20 @@ dd {
   font-size: 0.78rem;
 }
 
+.income-note {
+  margin: 0.4rem 0 0;
+  color: var(--ink);
+  font-size: 0.9rem;
+  line-height: 1.4;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.income-note:empty {
+  display: none;
+}
+
 .vignette {
   margin: 0.95rem 0 0;
   font-family: var(--display);

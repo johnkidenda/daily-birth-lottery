@@ -14,7 +14,7 @@ The card contract is `card-schema.json` (nested Esther schema; key is `card_id`)
 
 The first draw of a local `YYYY-MM-DD` is seeded from that date (today’s featured life). Later clicks are Extra. Streak and lives-met (unique `card_id`s) stay in `localStorage` only.
 
-The live card UI hides sparse fields (religion, sexuality, disability, water, sanitation, internet) and the vs-world-median block. Those values stay in `data/cards.json` for later. Education for ages 0–24 with a null attainment shows “not applicable (UIS is ages 25+)”. Income / consumption is World Bank PIP 2021 PPP $ per person per day (not monthly).
+The live card UI hides sparse fields (religion, sexuality, disability, water, sanitation, internet) and the vs-world-median block. Those values stay in `data/cards.json` for later. Education for ages 0–24 with a null attainment shows “not applicable (UIS is ages 25+)”. Income / consumption is World Bank PIP 2021 PPP $ per person per day, including the locked $15 / $28 bands.
 
 ## Run locally
 
