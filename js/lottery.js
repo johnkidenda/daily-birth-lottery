@@ -107,6 +107,19 @@
     return String(value).replaceAll("_", " ");
   }
 
+  const INCOME_BAND_LABELS = {
+    below_300_2021ppp: "under $3",
+    "300_to_420_2021ppp": "$3–$4.20",
+    "420_to_830_2021ppp": "$4.20–$8.30",
+    above_830_2021ppp: "over $8.30",
+    not_in_pip: "not in World Bank PIP",
+  };
+
+  function formatIncomeBand(value) {
+    if (value === null || value === undefined || value === "") return UNAVAILABLE;
+    return INCOME_BAND_LABELS[value] || formatToken(value);
+  }
+
   function hasFiniteNumber(value) {
     return typeof value === "number" && Number.isFinite(value);
   }
@@ -197,6 +210,7 @@
     isPlaceholderCard,
     formatFlag,
     formatToken,
+    formatIncomeBand,
     formatCountryHdi,
     formatCountryLifeExpectancy,
     formatEducation,

@@ -157,7 +157,7 @@
     setText(node, "[data-card-id]", L.cardId(card));
 
     const housing = card.housing_energy_water_internet || {};
-    setText(node, "[data-field=\"income\"]", L.formatToken(card.income_or_consumption_ppp_band));
+    setText(node, "[data-field=\"income\"]", L.formatIncomeBand(card.income_or_consumption_ppp_band));
     setText(node, "[data-field=\"education\"]", L.formatEducationForCard(card));
     setText(node, "[data-field=\"occupation\"]", L.formatOccupation(card.occupation_class));
     setText(node, "[data-field=\"household\"]", L.formatHouseholdSize(card.family));
