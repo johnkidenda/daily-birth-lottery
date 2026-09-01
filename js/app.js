@@ -134,28 +134,6 @@
     if (el) el.textContent = value;
   }
 
-  function unknownOrUnavailable(field, value) {
-    if (value !== L.UNAVAILABLE) return value;
-    if (field === "health" || field === "religion" || field === "sexuality") {
-      return "unknown";
-    }
-    return L.UNAVAILABLE;
-  }
-
-  function compareBundle(card) {
-    if (card.compare_world_median && typeof card.compare_world_median === "object") {
-      return card.compare_world_median;
-    }
-    if (card.vs_world_median && typeof card.vs_world_median === "object") {
-      return card.vs_world_median;
-    }
-    return {};
-  }
-
-  function hasCatalogMedian(value) {
-    return typeof value === "number" && Number.isFinite(value);
-  }
-
   function renderCard(card, { kind, today }) {
     const node = template.content.firstElementChild.cloneNode(true);
     const kindEl = node.querySelector("[data-kind]");
@@ -180,18 +158,12 @@
 
     const housing = card.housing_energy_water_internet || {};
     setText(node, "[data-field=\"income\"]", L.formatToken(card.income_or_consumption_ppp_band));
-    setText(node, "[data-field=\"education\"]", L.formatEducation(card.education));
+    setText(node, "[data-field=\"education\"]", L.formatEducationForCard(card));
     setText(node, "[data-field=\"occupation\"]", L.formatOccupation(card.occupation_class));
-    setText(node, "[data-field=\"family\"]", L.formatFamily(card.family));
-    setText(node, "[data-field=\"health\"]", unknownOrUnavailable("health", L.formatHealth(card.health_disability)));
-    setText(node, "[data-field=\"religion\"]", unknownOrUnavailable("religion", L.formatReligion(card.religion)));
-    setText(node, "[data-field=\"sexuality\"]", unknownOrUnavailable("sexuality", L.formatSexuality(card.sexuality_or_gender_minority)));
+    setText(node, "[data-field=\"household\"]", L.formatHouseholdSize(card.family));
+    setText(node, "[data-field=\"electricity\"]", L.formatFlag(housing.electricity));
     setText(node, "[data-field=\"hdi\"]", L.formatCountryHdi(card.country_hdi));
     setText(node, "[data-field=\"life_expectancy\"]", L.formatCountryLifeExpectancy(card.country_life_expectancy));
-
-    node.querySelectorAll("[data-flag]").forEach((el) => {
-      el.textContent = L.formatFlag(housing[el.dataset.flag]);
-    });
 
     const sources = node.querySelector("[data-sources]");
     sources.replaceChildren();
@@ -215,22 +187,6 @@
       li.textContent = "No sources[] on this card.";
       sources.appendChild(li);
     }
-
-    const compare = compareBundle(card);
-    const slots = ["life_expectancy", "consumption_ppp", "years_school"];
-    let anyReal = false;
-    slots.forEach((key) => {
-      const el = node.querySelector(`[data-vs="${key}"]`);
-      if (hasCatalogMedian(compare[key])) {
-        el.textContent = String(compare[key]);
-        anyReal = true;
-      } else {
-        el.textContent = L.UNAVAILABLE;
-      }
-    });
-    node.querySelector("[data-vs-note]").textContent = anyReal
-      ? "Compared with world-median figures present on this card."
-      : "World-median comparison not in this catalog. No invented figures.";
 
     cardRoot.replaceChildren(node);
   }

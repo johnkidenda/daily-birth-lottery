@@ -130,6 +130,22 @@
     return formatToken(edu.highest);
   }
 
+  function formatEducationForCard(card) {
+    const young = ["0-4", "5-14", "15-24"].includes(card && card.age_band);
+    const edu = card && card.education;
+    if (young && (!edu || typeof edu !== "object")) {
+      return "not applicable (UIS is ages 25+)";
+    }
+    return formatEducation(edu);
+  }
+
+  function formatHouseholdSize(family) {
+    if (!family || typeof family !== "object" || family.household_size_band == null) {
+      return UNAVAILABLE;
+    }
+    return String(family.household_size_band);
+  }
+
   function formatOccupation(occ) {
     if (!occ || typeof occ !== "object") return UNAVAILABLE;
     return formatToken(occ.class);
@@ -184,6 +200,8 @@
     formatCountryHdi,
     formatCountryLifeExpectancy,
     formatEducation,
+    formatEducationForCard,
+    formatHouseholdSize,
     formatOccupation,
     formatFamily,
     formatHealth,
