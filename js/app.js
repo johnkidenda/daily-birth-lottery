@@ -1,6 +1,8 @@
 (() => {
   const STORAGE_KEY = "daily-birth-lottery-v1";
-  const DATA_URL = "data/cards.json";
+  const CARDS_URL = "data/cards.json";
+  const COUNTRIES_URL = "data/countries.json";
+  const L = globalThis.BirthLottery;
 
   const $ = (id) => document.getElementById(id);
   const drawBtn = $("draw-btn");
@@ -13,6 +15,8 @@
 
   const state = {
     cards: [],
+    universe: [],
+    byCountry: new Map(),
     store: loadStore(),
   };
 
@@ -89,66 +93,24 @@
     };
   }
 
-  function pickWeighted(items, weights, rng) {
-    const total = weights.reduce((sum, w) => sum + (Number(w) > 0 ? Number(w) : 0), 0);
-    if (!items.length) return null;
-    if (total <= 0) {
-      return items[Math.floor(rng() * items.length)];
-    }
-    let r = rng() * total;
-    for (let i = 0; i < items.length; i += 1) {
-      r -= Number(weights[i]) > 0 ? Number(weights[i]) : 0;
-      if (r <= 0) return items[i];
-    }
-    return items[items.length - 1];
-  }
-
-  function groupByCountry(cards) {
-    const map = new Map();
-    cards.forEach((card) => {
-      const key = card.country_iso3 || "UNK";
-      if (!map.has(key)) map.set(key, []);
-      map.get(key).push(card);
-    });
-    return map;
-  }
-
-  function countryPopShare(countryCards, countryCount) {
-    const listed = countryCards
-      .map((c) => Number(c.pop_share))
-      .find((n) => Number.isFinite(n) && n > 0);
-    if (listed) return listed;
-    return 1 / countryCount;
-  }
-
-  function drawLife(cards, rng) {
-    const byCountry = groupByCountry(cards);
-    const countries = Array.from(byCountry.keys());
-    const n = countries.length;
-    if (!n) return null;
-
-    const countryWeights = countries.map((iso) => {
-      const popShare = countryPopShare(byCountry.get(iso), n);
-      return 0.5 * popShare + 0.5 / n;
-    });
-
-    const iso = pickWeighted(countries, countryWeights, rng);
-    const pool = byCountry.get(iso) || [];
-    const cardWeights = pool.map((c) => Number(c.weight_in_country) || 0);
-    return pickWeighted(pool, cardWeights, rng);
-  }
-
   function cardById(id) {
-    return state.cards.find((c) => c.id === id) || null;
+    if (!id) return null;
+    return state.cards.find((c) => L.cardId(c) === id) || null;
+  }
+
+  function drawCard(rng) {
+    const result = L.drawOnce(state.universe, state.byCountry, rng);
+    return result && result.card ? result.card : null;
   }
 
   function markSeen(card, { featured, today }) {
-    if (!state.store.seenIds.includes(card.id)) {
-      state.store.seenIds.push(card.id);
+    const id = L.cardId(card);
+    if (id && !state.store.seenIds.includes(id)) {
+      state.store.seenIds.push(id);
     }
     if (featured) {
       state.store.featuredDate = today;
-      state.store.featuredId = card.id;
+      state.store.featuredId = id;
       if (state.store.lastStreakDate === today) {
         // already counted today
       } else if (state.store.lastStreakDate === yesterdayKey(today)) {
@@ -167,8 +129,31 @@
     livesValue.textContent = String(state.store.seenIds.length);
   }
 
-  function hasRealCompareValue(value) {
-    return typeof value === "number" && Number.isFinite(value) && value > 0;
+  function setText(node, selector, value) {
+    const el = node.querySelector(selector);
+    if (el) el.textContent = value;
+  }
+
+  function unknownOrUnavailable(field, value) {
+    if (value !== L.UNAVAILABLE) return value;
+    if (field === "health" || field === "religion" || field === "sexuality") {
+      return "unknown";
+    }
+    return L.UNAVAILABLE;
+  }
+
+  function compareBundle(card) {
+    if (card.compare_world_median && typeof card.compare_world_median === "object") {
+      return card.compare_world_median;
+    }
+    if (card.vs_world_median && typeof card.vs_world_median === "object") {
+      return card.vs_world_median;
+    }
+    return {};
+  }
+
+  function hasCatalogMedian(value) {
+    return typeof value === "number" && Number.isFinite(value);
   }
 
   function renderCard(card, { kind, today }) {
@@ -177,32 +162,48 @@
     kindEl.textContent = kind === "featured" ? "Featured" : "Extra";
     kindEl.dataset.tone = kind;
 
-    node.querySelector("[data-date]").textContent =
+    setText(
+      node,
+      "[data-date]",
       kind === "featured"
         ? `Today’s featured life · ${formatDateLabel(today)}`
-        : `Extra roll · not today’s featured life`;
+        : "Extra roll · not today’s featured life"
+    );
 
-    node.querySelector("[data-country]").textContent = card.country_name || card.country_iso3;
-    node.querySelector("[data-meta]").textContent = [card.age_band, card.sex, card.urban_rural]
-      .filter(Boolean)
-      .join(" · ");
+    setText(node, "[data-country]", card.country_name || card.country_iso3);
+    setText(
+      node,
+      "[data-meta]",
+      [card.age_band, card.sex, card.urban_rural].filter(Boolean).join(" · ")
+    );
+    setText(node, "[data-card-id]", L.cardId(card));
 
-    node.querySelectorAll("[data-field]").forEach((el) => {
-      el.textContent = card[el.dataset.field] || "unknown";
+    const housing = card.housing_energy_water_internet || {};
+    setText(node, "[data-field=\"income\"]", L.formatToken(card.income_or_consumption_ppp_band));
+    setText(node, "[data-field=\"education\"]", L.formatEducation(card.education));
+    setText(node, "[data-field=\"occupation\"]", L.formatOccupation(card.occupation_class));
+    setText(node, "[data-field=\"family\"]", L.formatFamily(card.family));
+    setText(node, "[data-field=\"health\"]", unknownOrUnavailable("health", L.formatHealth(card.health_disability)));
+    setText(node, "[data-field=\"religion\"]", unknownOrUnavailable("religion", L.formatReligion(card.religion)));
+    setText(node, "[data-field=\"sexuality\"]", unknownOrUnavailable("sexuality", L.formatSexuality(card.sexuality_or_gender_minority)));
+    setText(node, "[data-field=\"hdi\"]", L.formatCountryHdi(card.country_hdi));
+    setText(node, "[data-field=\"life_expectancy\"]", L.formatCountryLifeExpectancy(card.country_life_expectancy));
+
+    node.querySelectorAll("[data-flag]").forEach((el) => {
+      el.textContent = L.formatFlag(housing[el.dataset.flag]);
     });
-
-    node.querySelector("[data-vignette]").textContent = card.vignette || "PLACEHOLDER. Not a real person.";
 
     const sources = node.querySelector("[data-sources]");
     sources.replaceChildren();
     (card.sources || []).forEach((src) => {
       const li = document.createElement("li");
-      const label = `${src.label || "Source"}${src.year ? ` (${src.year})` : ""}`;
+      const label = L.formatSourceLine(src);
       if (src.url) {
         const a = document.createElement("a");
         a.href = src.url;
         a.textContent = label;
         a.rel = "noopener noreferrer";
+        a.target = "_blank";
         li.appendChild(a);
       } else {
         li.textContent = label;
@@ -211,29 +212,25 @@
     });
     if (!sources.childElementCount) {
       const li = document.createElement("li");
-      li.textContent = "Placeholder — no citations in this catalog.";
+      li.textContent = "No sources[] on this card.";
       sources.appendChild(li);
     }
 
-    const compare = card.compare_world_median || {};
-    const slots = [
-      ["life_expectancy", "Life expectancy"],
-      ["consumption_ppp", "Consumption"],
-      ["years_school", "Years of school"],
-    ];
+    const compare = compareBundle(card);
+    const slots = ["life_expectancy", "consumption_ppp", "years_school"];
     let anyReal = false;
-    slots.forEach(([key]) => {
+    slots.forEach((key) => {
       const el = node.querySelector(`[data-vs="${key}"]`);
-      if (hasRealCompareValue(compare[key])) {
+      if (hasCatalogMedian(compare[key])) {
         el.textContent = String(compare[key]);
         anyReal = true;
       } else {
-        el.textContent = "unavailable";
+        el.textContent = L.UNAVAILABLE;
       }
     });
     node.querySelector("[data-vs-note]").textContent = anyReal
-      ? "Compared with world median figures in the catalog."
-      : "Placeholder — world-median comparison not loaded. No invented figures.";
+      ? "Compared with world-median figures present on this card."
+      : "World-median comparison not in this catalog. No invented figures.";
 
     cardRoot.replaceChildren(node);
   }
@@ -243,23 +240,26 @@
     statusEl.hidden = !show;
   }
 
+  function hasFeaturedToday(today) {
+    return state.store.featuredDate === today && Boolean(cardById(state.store.featuredId));
+  }
+
   function updateChrome(today) {
-    const hasFeatured = state.store.featuredDate === today && state.store.featuredId;
-    drawBtn.textContent = hasFeatured ? "Draw again" : "Draw";
-    drawHint.textContent = hasFeatured
+    const ready = hasFeaturedToday(today);
+    drawBtn.textContent = ready ? "Draw again" : "Draw";
+    drawHint.textContent = ready
       ? "Further rolls are Extra. They are not today’s featured life."
       : "First draw of the day is the featured life.";
   }
 
   function onDraw() {
     const today = localDateKey();
-    const hasFeatured = state.store.featuredDate === today && cardById(state.store.featuredId);
+    const featuredReady = hasFeaturedToday(today);
 
-    if (!hasFeatured) {
-      const rng = mulberry32(hashString(today));
-      const card = drawLife(state.cards, rng);
+    if (!featuredReady) {
+      const card = drawCard(mulberry32(hashString(today)));
       if (!card) {
-        setStatus("No cards in the catalog.");
+        setStatus("No cards in the prototype catalog.");
         return;
       }
       markSeen(card, { featured: true, today });
@@ -269,9 +269,9 @@
       return;
     }
 
-    const card = drawLife(state.cards, Math.random);
+    const card = drawCard(Math.random);
     if (!card) {
-      setStatus("No cards in the catalog.");
+      setStatus("No cards in the prototype catalog.");
       return;
     }
     markSeen(card, { featured: false, today });
@@ -283,28 +283,42 @@
   function restoreIfNeeded() {
     const today = localDateKey();
     updateChrome(today);
-    if (state.store.featuredDate === today) {
-      const card = cardById(state.store.featuredId);
-      if (card) {
-        renderCard(card, { kind: "featured", today });
-      }
+    if (hasFeaturedToday(today)) {
+      renderCard(cardById(state.store.featuredId), { kind: "featured", today });
     }
     renderStats();
+  }
+
+  async function loadJson(url) {
+    const res = await fetch(url, { cache: "no-store" });
+    if (!res.ok) throw new Error(`Could not load ${url}`);
+    return res.json();
   }
 
   async function init() {
     drawBtn.disabled = true;
     try {
-      const res = await fetch(DATA_URL, { cache: "no-store" });
-      if (!res.ok) throw new Error(`Could not load ${DATA_URL}`);
-      const data = await res.json();
-      state.cards = Array.isArray(data) ? data : data.cards || [];
-      if (!state.cards.length) throw new Error("Catalog has no cards.");
+      const cardsData = await loadJson(CARDS_URL);
+      let countries = [];
+      try {
+        countries = L.normalizeCountries(await loadJson(COUNTRIES_URL));
+      } catch {
+        countries = [];
+      }
+
+      state.cards = L.normalizeCatalog(cardsData);
+      if (!state.cards.length) throw new Error("Prototype catalog has no cards.");
+
+      const proto = L.prototypeUniverse(countries, state.cards);
+      state.universe = proto.universe;
+      state.byCountry = proto.byCountry;
+      if (!state.universe.length) throw new Error("Prototype catalog has no countries.");
+
       restoreIfNeeded();
       drawBtn.disabled = false;
       drawBtn.addEventListener("click", onDraw);
     } catch (err) {
-      setStatus(err.message || "Could not load catalog.");
+      setStatus(err.message || "Could not load prototype catalog.");
       drawBtn.disabled = true;
     }
   }

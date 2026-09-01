@@ -1,0 +1,927 @@
+[
+  {
+    "iso3": "AFG",
+    "name": "Afghanistan",
+    "p_mix": 0.005320629125
+  },
+  {
+    "iso3": "AGO",
+    "name": "Angola",
+    "p_mix": 0.005028334539
+  },
+  {
+    "iso3": "ALB",
+    "name": "Albania",
+    "p_mix": 0.00287407586
+  },
+  {
+    "iso3": "ARE",
+    "name": "United Arab Emirates",
+    "p_mix": 0.003379605635
+  },
+  {
+    "iso3": "ARG",
+    "name": "Argentina",
+    "p_mix": 0.005507772273
+  },
+  {
+    "iso3": "ARM",
+    "name": "Armenia",
+    "p_mix": 0.002885252577
+  },
+  {
+    "iso3": "AUS",
+    "name": "Australia",
+    "p_mix": 0.004342499134
+  },
+  {
+    "iso3": "AUT",
+    "name": "Austria",
+    "p_mix": 0.003262585974
+  },
+  {
+    "iso3": "AZE",
+    "name": "Azerbaijan",
+    "p_mix": 0.003337215936
+  },
+  {
+    "iso3": "BDI",
+    "name": "Burundi",
+    "p_mix": 0.003565029382
+  },
+  {
+    "iso3": "BEL",
+    "name": "Belgium",
+    "p_mix": 0.003423289457
+  },
+  {
+    "iso3": "BEN",
+    "name": "Benin",
+    "p_mix": 0.00359050045
+  },
+  {
+    "iso3": "BFA",
+    "name": "Burkina Faso",
+    "p_mix": 0.004148250216
+  },
+  {
+    "iso3": "BGD",
+    "name": "Bangladesh",
+    "p_mix": 0.013356869628
+  },
+  {
+    "iso3": "BGR",
+    "name": "Bulgaria",
+    "p_mix": 0.003117525047
+  },
+  {
+    "iso3": "BHR",
+    "name": "Bahrain",
+    "p_mix": 0.002801351787
+  },
+  {
+    "iso3": "BHS",
+    "name": "Bahamas",
+    "p_mix": 0.002727335555
+  },
+  {
+    "iso3": "BIH",
+    "name": "Bosnia and Herzegovina",
+    "p_mix": 0.002896941124
+  },
+  {
+    "iso3": "BLR",
+    "name": "Belarus",
+    "p_mix": 0.003258650137
+  },
+  {
+    "iso3": "BLZ",
+    "name": "Belize",
+    "p_mix": 0.002728304766
+  },
+  {
+    "iso3": "BOL",
+    "name": "Bolivia (Plurinational State of)",
+    "p_mix": 0.003464696991
+  },
+  {
+    "iso3": "BRA",
+    "name": "Brazil",
+    "p_mix": 0.015716285444
+  },
+  {
+    "iso3": "BRB",
+    "name": "Barbados",
+    "p_mix": 0.002720042007
+  },
+  {
+    "iso3": "BRN",
+    "name": "Brunei Darussalam",
+    "p_mix": 0.002731106941
+  },
+  {
+    "iso3": "BTN",
+    "name": "Bhutan",
+    "p_mix": 0.002751290591
+  },
+  {
+    "iso3": "BWA",
+    "name": "Botswana",
+    "p_mix": 0.002857463419
+  },
+  {
+    "iso3": "CAF",
+    "name": "Central African Republic",
+    "p_mix": 0.003029928374
+  },
+  {
+    "iso3": "CAN",
+    "name": "Canada",
+    "p_mix": 0.005142301205
+  },
+  {
+    "iso3": "CHE",
+    "name": "Switzerland",
+    "p_mix": 0.003250380625
+  },
+  {
+    "iso3": "CHL",
+    "name": "Chile",
+    "p_mix": 0.003915967864
+  },
+  {
+    "iso3": "CHN",
+    "name": "China",
+    "p_mix": 0.089828076361
+  },
+  {
+    "iso3": "CIV",
+    "name": "Côte d'Ivoire",
+    "p_mix": 0.004662992994
+  },
+  {
+    "iso3": "CMR",
+    "name": "Cameroon",
+    "p_mix": 0.004490470643
+  },
+  {
+    "iso3": "COD",
+    "name": "Democratic Republic of the Congo",
+    "p_mix": 0.009410652177
+  },
+  {
+    "iso3": "COG",
+    "name": "Congo",
+    "p_mix": 0.003091453017
+  },
+  {
+    "iso3": "COL",
+    "name": "Colombia",
+    "p_mix": 0.005949144653
+  },
+  {
+    "iso3": "COM",
+    "name": "Comoros",
+    "p_mix": 0.002755900868
+  },
+  {
+    "iso3": "CPV",
+    "name": "Cabo Verde",
+    "p_mix": 0.002734922402
+  },
+  {
+    "iso3": "CRI",
+    "name": "Costa Rica",
+    "p_mix": 0.003017603446
+  },
+  {
+    "iso3": "CUB",
+    "name": "Cuba",
+    "p_mix": 0.003376699289
+  },
+  {
+    "iso3": "CYP",
+    "name": "Cyprus",
+    "p_mix": 0.002786081166
+  },
+  {
+    "iso3": "CZE",
+    "name": "Czechia",
+    "p_mix": 0.003361725957
+  },
+  {
+    "iso3": "DEU",
+    "name": "Germany",
+    "p_mix": 0.007892962154
+  },
+  {
+    "iso3": "DJI",
+    "name": "Djibouti",
+    "p_mix": 0.00277444498
+  },
+  {
+    "iso3": "DNK",
+    "name": "Denmark",
+    "p_mix": 0.003069627558
+  },
+  {
+    "iso3": "DOM",
+    "name": "Dominican Republic",
+    "p_mix": 0.003404186003
+  },
+  {
+    "iso3": "DZA",
+    "name": "Algeria",
+    "p_mix": 0.005576410115
+  },
+  {
+    "iso3": "ECU",
+    "name": "Ecuador",
+    "p_mix": 0.003815953326
+  },
+  {
+    "iso3": "EGY",
+    "name": "Egypt",
+    "p_mix": 0.009856431341
+  },
+  {
+    "iso3": "ERI",
+    "name": "Eritrea",
+    "p_mix": 0.002919736532
+  },
+  {
+    "iso3": "ESP",
+    "name": "Spain",
+    "p_mix": 0.005643701717
+  },
+  {
+    "iso3": "EST",
+    "name": "Estonia",
+    "p_mix": 0.002786220142
+  },
+  {
+    "iso3": "ETH",
+    "name": "Ethiopia",
+    "p_mix": 0.010809222857
+  },
+  {
+    "iso3": "FIN",
+    "name": "Finland",
+    "p_mix": 0.003047522611
+  },
+  {
+    "iso3": "FJI",
+    "name": "Fiji",
+    "p_mix": 0.002759716329
+  },
+  {
+    "iso3": "FRA",
+    "name": "France",
+    "p_mix": 0.006787800018
+  },
+  {
+    "iso3": "FSM",
+    "name": "Micronesia (Fed. States of)",
+    "p_mix": 0.002709649056
+  },
+  {
+    "iso3": "GAB",
+    "name": "Gabon",
+    "p_mix": 0.002858556874
+  },
+  {
+    "iso3": "GBR",
+    "name": "United Kingdom",
+    "p_mix": 0.006946767035
+  },
+  {
+    "iso3": "GEO",
+    "name": "Georgia",
+    "p_mix": 0.00293643743
+  },
+  {
+    "iso3": "GHA",
+    "name": "Ghana",
+    "p_mix": 0.004816037686
+  },
+  {
+    "iso3": "GIN",
+    "name": "Guinea",
+    "p_mix": 0.003608428683
+  },
+  {
+    "iso3": "GMB",
+    "name": "Gambia",
+    "p_mix": 0.002872125221
+  },
+  {
+    "iso3": "GNB",
+    "name": "Guinea-Bissau",
+    "p_mix": 0.002837833218
+  },
+  {
+    "iso3": "GNQ",
+    "name": "Equatorial Guinea",
+    "p_mix": 0.002818875247
+  },
+  {
+    "iso3": "GRC",
+    "name": "Greece",
+    "p_mix": 0.003319490335
+  },
+  {
+    "iso3": "GRD",
+    "name": "Grenada",
+    "p_mix": 0.002709897482
+  },
+  {
+    "iso3": "GTM",
+    "name": "Guatemala",
+    "p_mix": 0.00383258142
+  },
+  {
+    "iso3": "GUY",
+    "name": "Guyana",
+    "p_mix": 0.002753719176
+  },
+  {
+    "iso3": "HND",
+    "name": "Honduras",
+    "p_mix": 0.003367241052
+  },
+  {
+    "iso3": "HRV",
+    "name": "Croatia",
+    "p_mix": 0.002940590448
+  },
+  {
+    "iso3": "HTI",
+    "name": "Haiti",
+    "p_mix": 0.003425363909
+  },
+  {
+    "iso3": "HUN",
+    "name": "Hungary",
+    "p_mix": 0.003296674547
+  },
+  {
+    "iso3": "IDN",
+    "name": "Indonesia",
+    "p_mix": 0.020104676659
+  },
+  {
+    "iso3": "IND",
+    "name": "India",
+    "p_mix": 0.091768740748
+  },
+  {
+    "iso3": "IRL",
+    "name": "Ireland",
+    "p_mix": 0.003025283169
+  },
+  {
+    "iso3": "IRN",
+    "name": "Iran (Islamic Republic of)",
+    "p_mix": 0.008323610042
+  },
+  {
+    "iso3": "IRQ",
+    "name": "Iraq",
+    "p_mix": 0.005529002726
+  },
+  {
+    "iso3": "ISL",
+    "name": "Iceland",
+    "p_mix": 0.00272685141
+  },
+  {
+    "iso3": "ISR",
+    "name": "Israel",
+    "p_mix": 0.003278927216
+  },
+  {
+    "iso3": "ITA",
+    "name": "Italy",
+    "p_mix": 0.006345478684
+  },
+  {
+    "iso3": "JAM",
+    "name": "Jamaica",
+    "p_mix": 0.002876986134
+  },
+  {
+    "iso3": "JOR",
+    "name": "Jordan",
+    "p_mix": 0.003411878739
+  },
+  {
+    "iso3": "JPN",
+    "name": "Japan",
+    "p_mix": 0.010299312509
+  },
+  {
+    "iso3": "KAZ",
+    "name": "Kazakhstan",
+    "p_mix": 0.003966782563
+  },
+  {
+    "iso3": "KEN",
+    "name": "Kenya",
+    "p_mix": 0.00616685237
+  },
+  {
+    "iso3": "KGZ",
+    "name": "Kyrgyzstan",
+    "p_mix": 0.003143817571
+  },
+  {
+    "iso3": "KHM",
+    "name": "Cambodia",
+    "p_mix": 0.00378546469
+  },
+  {
+    "iso3": "KIR",
+    "name": "Kiribati",
+    "p_mix": 0.002710960122
+  },
+  {
+    "iso3": "KOR",
+    "name": "Republic of Korea",
+    "p_mix": 0.005877399245
+  },
+  {
+    "iso3": "KWT",
+    "name": "Kuwait",
+    "p_mix": 0.003005608587
+  },
+  {
+    "iso3": "LAO",
+    "name": "Lao People's Democratic Republic",
+    "p_mix": 0.003179654887
+  },
+  {
+    "iso3": "LBN",
+    "name": "Lebanon",
+    "p_mix": 0.003059103059
+  },
+  {
+    "iso3": "LBR",
+    "name": "Liberia",
+    "p_mix": 0.003047246807
+  },
+  {
+    "iso3": "LBY",
+    "name": "Libya",
+    "p_mix": 0.003155788552
+  },
+  {
+    "iso3": "LCA",
+    "name": "Saint Lucia",
+    "p_mix": 0.002713736331
+  },
+  {
+    "iso3": "LKA",
+    "name": "Sri Lanka",
+    "p_mix": 0.004120920526
+  },
+  {
+    "iso3": "LSO",
+    "name": "Lesotho",
+    "p_mix": 0.002846185969
+  },
+  {
+    "iso3": "LTU",
+    "name": "Lithuania",
+    "p_mix": 0.002878209849
+  },
+  {
+    "iso3": "LUX",
+    "name": "Luxembourg",
+    "p_mix": 0.002744017177
+  },
+  {
+    "iso3": "LVA",
+    "name": "Latvia",
+    "p_mix": 0.002817607949
+  },
+  {
+    "iso3": "MAR",
+    "name": "Morocco",
+    "p_mix": 0.005040324549
+  },
+  {
+    "iso3": "MDA",
+    "name": "Republic of Moldova",
+    "p_mix": 0.002889004504
+  },
+  {
+    "iso3": "MDG",
+    "name": "Madagascar",
+    "p_mix": 0.004664879117
+  },
+  {
+    "iso3": "MDV",
+    "name": "Maldives",
+    "p_mix": 0.00273510177
+  },
+  {
+    "iso3": "MEX",
+    "name": "Mexico",
+    "p_mix": 0.010735636689
+  },
+  {
+    "iso3": "MKD",
+    "name": "North Macedonia",
+    "p_mix": 0.002814608543
+  },
+  {
+    "iso3": "MLI",
+    "name": "Mali",
+    "p_mix": 0.004205327069
+  },
+  {
+    "iso3": "MLT",
+    "name": "Malta",
+    "p_mix": 0.002735826607
+  },
+  {
+    "iso3": "MMR",
+    "name": "Myanmar",
+    "p_mix": 0.006048203729
+  },
+  {
+    "iso3": "MNE",
+    "name": "Montenegro",
+    "p_mix": 0.002741895888
+  },
+  {
+    "iso3": "MNG",
+    "name": "Mongolia",
+    "p_mix": 0.002916049551
+  },
+  {
+    "iso3": "MOZ",
+    "name": "Mozambique",
+    "p_mix": 0.004828581882
+  },
+  {
+    "iso3": "MRT",
+    "name": "Mauritania",
+    "p_mix": 0.003020027242
+  },
+  {
+    "iso3": "MUS",
+    "name": "Mauritius",
+    "p_mix": 0.002780733714
+  },
+  {
+    "iso3": "MWI",
+    "name": "Malawi",
+    "p_mix": 0.004032017576
+  },
+  {
+    "iso3": "MYS",
+    "name": "Malaysia",
+    "p_mix": 0.004885418903
+  },
+  {
+    "iso3": "NAM",
+    "name": "Namibia",
+    "p_mix": 0.002888708014
+  },
+  {
+    "iso3": "NER",
+    "name": "Niger",
+    "p_mix": 0.004362093732
+  },
+  {
+    "iso3": "NGA",
+    "name": "Nigeria",
+    "p_mix": 0.016985787708
+  },
+  {
+    "iso3": "NIC",
+    "name": "Nicaragua",
+    "p_mix": 0.003127251599
+  },
+  {
+    "iso3": "NLD",
+    "name": "Netherlands",
+    "p_mix": 0.003821678359
+  },
+  {
+    "iso3": "NOR",
+    "name": "Norway",
+    "p_mix": 0.003045027301
+  },
+  {
+    "iso3": "NPL",
+    "name": "Nepal",
+    "p_mix": 0.004522839693
+  },
+  {
+    "iso3": "NZL",
+    "name": "New Zealand",
+    "p_mix": 0.003022761893
+  },
+  {
+    "iso3": "OMN",
+    "name": "Oman",
+    "p_mix": 0.003026911167
+  },
+  {
+    "iso3": "PAK",
+    "name": "Pakistan",
+    "p_mix": 0.018126919997
+  },
+  {
+    "iso3": "PAN",
+    "name": "Panama",
+    "p_mix": 0.002979892469
+  },
+  {
+    "iso3": "PER",
+    "name": "Peru",
+    "p_mix": 0.004803173427
+  },
+  {
+    "iso3": "PHL",
+    "name": "Philippines",
+    "p_mix": 0.009813793892
+  },
+  {
+    "iso3": "PNG",
+    "name": "Papua New Guinea",
+    "p_mix": 0.003351943789
+  },
+  {
+    "iso3": "POL",
+    "name": "Poland",
+    "p_mix": 0.005068440707
+  },
+  {
+    "iso3": "PRK",
+    "name": "Dem. People's Republic of Korea",
+    "p_mix": 0.004329339245
+  },
+  {
+    "iso3": "PRT",
+    "name": "Portugal",
+    "p_mix": 0.003342661728
+  },
+  {
+    "iso3": "PRY",
+    "name": "Paraguay",
+    "p_mix": 0.003128050405
+  },
+  {
+    "iso3": "PSE",
+    "name": "State of Palestine",
+    "p_mix": 0.003040041776
+  },
+  {
+    "iso3": "QAT",
+    "name": "Qatar",
+    "p_mix": 0.002889830872
+  },
+  {
+    "iso3": "ROU",
+    "name": "Romania",
+    "p_mix": 0.003869948395
+  },
+  {
+    "iso3": "RUS",
+    "name": "Russian Federation",
+    "p_mix": 0.011592538755
+  },
+  {
+    "iso3": "RWA",
+    "name": "Rwanda",
+    "p_mix": 0.003577845453
+  },
+  {
+    "iso3": "SAU",
+    "name": "Saudi Arabia",
+    "p_mix": 0.004787514605
+  },
+  {
+    "iso3": "SDN",
+    "name": "Sudan",
+    "p_mix": 0.005799524275
+  },
+  {
+    "iso3": "SEN",
+    "name": "Senegal",
+    "p_mix": 0.003838451384
+  },
+  {
+    "iso3": "SGP",
+    "name": "Singapore",
+    "p_mix": 0.003060725164
+  },
+  {
+    "iso3": "SLB",
+    "name": "Solomon Islands",
+    "p_mix": 0.002752989366
+  },
+  {
+    "iso3": "SLE",
+    "name": "Sierra Leone",
+    "p_mix": 0.003233195275
+  },
+  {
+    "iso3": "SLV",
+    "name": "El Salvador",
+    "p_mix": 0.003091774185
+  },
+  {
+    "iso3": "SOM",
+    "name": "Somalia",
+    "p_mix": 0.00386958395
+  },
+  {
+    "iso3": "SRB",
+    "name": "Serbia",
+    "p_mix": 0.003116206921
+  },
+  {
+    "iso3": "SSD",
+    "name": "South Sudan",
+    "p_mix": 0.003435851639
+  },
+  {
+    "iso3": "STP",
+    "name": "Sao Tome and Principe",
+    "p_mix": 0.002717161136
+  },
+  {
+    "iso3": "SUR",
+    "name": "Suriname",
+    "p_mix": 0.0027416474
+  },
+  {
+    "iso3": "SVK",
+    "name": "Slovakia",
+    "p_mix": 0.003040736473
+  },
+  {
+    "iso3": "SVN",
+    "name": "Slovenia",
+    "p_mix": 0.002832759421
+  },
+  {
+    "iso3": "SWE",
+    "name": "Sweden",
+    "p_mix": 0.003353815855
+  },
+  {
+    "iso3": "SWZ",
+    "name": "Eswatini",
+    "p_mix": 0.002778993626
+  },
+  {
+    "iso3": "SYC",
+    "name": "Seychelles",
+    "p_mix": 0.002710708443
+  },
+  {
+    "iso3": "SYR",
+    "name": "Syrian Arab Republic",
+    "p_mix": 0.004217245934
+  },
+  {
+    "iso3": "TCD",
+    "name": "Chad",
+    "p_mix": 0.003948769188
+  },
+  {
+    "iso3": "TGO",
+    "name": "Togo",
+    "p_mix": 0.003286797724
+  },
+  {
+    "iso3": "THA",
+    "name": "Thailand",
+    "p_mix": 0.007102060575
+  },
+  {
+    "iso3": "TJK",
+    "name": "Tajikistan",
+    "p_mix": 0.003352829271
+  },
+  {
+    "iso3": "TKM",
+    "name": "Turkmenistan",
+    "p_mix": 0.003162754242
+  },
+  {
+    "iso3": "TLS",
+    "name": "Timor-Leste",
+    "p_mix": 0.002788681199
+  },
+  {
+    "iso3": "TON",
+    "name": "Tonga",
+    "p_mix": 0.00270909751
+  },
+  {
+    "iso3": "TTO",
+    "name": "Trinidad and Tobago",
+    "p_mix": 0.002795258259
+  },
+  {
+    "iso3": "TUN",
+    "name": "Tunisia",
+    "p_mix": 0.003456335954
+  },
+  {
+    "iso3": "TUR",
+    "name": "Türkiye",
+    "p_mix": 0.008072302993
+  },
+  {
+    "iso3": "TWN",
+    "name": "China, Taiwan Province of China",
+    "p_mix": 0.004127697272
+  },
+  {
+    "iso3": "TZA",
+    "name": "United Republic of Tanzania",
+    "p_mix": 0.006911284219
+  },
+  {
+    "iso3": "UGA",
+    "name": "Uganda",
+    "p_mix": 0.005772891001
+  },
+  {
+    "iso3": "UKR",
+    "name": "Ukraine",
+    "p_mix": 0.005026761358
+  },
+  {
+    "iso3": "URY",
+    "name": "Uruguay",
+    "p_mix": 0.002910589211
+  },
+  {
+    "iso3": "USA",
+    "name": "United States of America",
+    "p_mix": 0.023906794783
+  },
+  {
+    "iso3": "UZB",
+    "name": "Uzbekistan",
+    "p_mix": 0.004934784051
+  },
+  {
+    "iso3": "VCT",
+    "name": "Saint Vincent and the Grenadines",
+    "p_mix": 0.00270887904
+  },
+  {
+    "iso3": "VEN",
+    "name": "Venezuela (Bolivarian Republic of)",
+    "p_mix": 0.004446383704
+  },
+  {
+    "iso3": "VNM",
+    "name": "Viet Nam",
+    "p_mix": 0.008901855787
+  },
+  {
+    "iso3": "VUT",
+    "name": "Vanuatu",
+    "p_mix": 0.002722823372
+  },
+  {
+    "iso3": "WSM",
+    "name": "Samoa",
+    "p_mix": 0.002716085851
+  },
+  {
+    "iso3": "XKX",
+    "name": "Kosovo (under UNSC res. 1244)",
+    "p_mix": 0.002806123937
+  },
+  {
+    "iso3": "YEM",
+    "name": "Yemen",
+    "p_mix": 0.005193909861
+  },
+  {
+    "iso3": "ZAF",
+    "name": "South Africa",
+    "p_mix": 0.006631799075
+  },
+  {
+    "iso3": "ZMB",
+    "name": "Zambia",
+    "p_mix": 0.004011126338
+  },
+  {
+    "iso3": "ZWE",
+    "name": "Zimbabwe",
+    "p_mix": 0.003723807639
+  }
+]

@@ -1,56 +1,20 @@
 # Daily birth lottery
 
-Public mock: https://johnkidenda.github.io/daily-birth-lottery/
+Public prototype: https://johnkidenda.github.io/daily-birth-lottery/
 
-Enable Pages if the URL is not live yet: repo Settings → Pages → Deploy from a branch → `main` / (`/`).
+This page is a **sourced prototype**, not the full 185-country world catalog. The live deck is only `data/cards.json` (Esther’s 50-card file: `proto-001`…`proto-050`, 10 countries). Replacing that one file is enough for a catalog update. The loader accepts a JSON array of cards or `{ "cards": [ ... ] }`.
 
-One page. One button. One life per local calendar day. Extra rolls are allowed and labeled Extra. Streak and lives-met stay in `localStorage` only.
+The card contract is `card-schema.json` (nested Esther schema; key is `card_id`).
 
-This catalog is a placeholder. Cards are not real people and do not carry real statistics.
+## Draw (prototype)
 
-## Replace the catalog
+1. Restrict the country universe to the countries that actually have cards in `data/cards.json` (10 in this prototype). Do not draw the other 175 countries and do not show an empty-state for them.
+2. Pick one of those countries using `p_mix` from `data/countries.json` among that subset (or equal weights if `p_mix` is missing).
+3. Pick a card in that country proportional to `weight_in_country`.
 
-Edit `data/cards.json`. Keep each card in this shape:
+The first draw of a local `YYYY-MM-DD` is seeded from that date (today’s featured life). Later clicks are Extra. Streak and lives-met (unique `card_id`s) stay in `localStorage` only.
 
-```json
-{
-  "id": "iso3-001",
-  "country_iso3": "NGA",
-  "country_name": "Nigeria",
-  "weight_in_country": 0.04,
-  "age_band": "25-34",
-  "sex": "female",
-  "urban_rural": "urban",
-  "income_or_consumption_ppp_band": "...",
-  "education": "...",
-  "occupation_class": "...",
-  "family": "...",
-  "housing": "...",
-  "health_disability": "...",
-  "religion": "unknown",
-  "sexuality_or_gender_minority": "unknown",
-  "country_hdi": 0.0,
-  "country_life_expectancy": 0,
-  "compare_world_median": {
-    "life_expectancy": 0,
-    "consumption_ppp": 0,
-    "years_school": 0
-  },
-  "vignette": "",
-  "sources": [{ "label": "...", "url": "...", "year": 2024 }]
-}
-```
-
-The file may be `{ "cards": [ ... ] }` or a bare array. Leave `compare_world_median` at `0` until real figures exist; the UI treats `0` as unavailable and will not invent OWID (or other) numbers.
-
-Optional later: put a real `pop_share` on cards of a country. Until then every country uses equal `1/N`.
-
-## Draw
-
-1. Pick country with `p_i = 0.5 * pop_share_i + 0.5 / N`
-2. Pick a card in that country proportional to `weight_in_country`
-
-The first draw of a local `YYYY-MM-DD` is seeded from that date (today’s featured life). Later clicks are Extra and use a fresh random draw.
+World-median comparison stays unavailable unless those figures are present on the card. The schema has no world medians; the UI does not invent OWID or other numbers.
 
 ## Run locally
 
