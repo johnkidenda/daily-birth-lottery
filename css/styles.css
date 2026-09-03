@@ -321,6 +321,27 @@ dd {
   border-top: 1px solid var(--line);
 }
 
+.citations > summary {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 650;
+  cursor: pointer;
+  list-style-position: outside;
+}
+
+.citations > summary::-webkit-details-marker {
+  color: var(--muted);
+}
+
+.citations > summary:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
 .citations h3,
 .vs h3 {
   margin: 0 0 0.45rem;
@@ -332,7 +353,7 @@ dd {
 }
 
 .citations ul {
-  margin: 0;
+  margin: 0.45rem 0 0;
   padding: 0 0 0 1.05rem;
 }
 
