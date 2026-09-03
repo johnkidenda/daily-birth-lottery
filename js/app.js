@@ -160,10 +160,7 @@
     img.onload = reveal;
     img.onerror = hide;
     img.src = L.artUrl(cardId);
-    if (img.complete) {
-      if (img.naturalWidth > 0) reveal();
-      else hide();
-    }
+    if (img.complete && img.naturalWidth > 0) reveal();
   }
 
   function renderCard(card, { kind, today }) {
