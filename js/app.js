@@ -134,6 +134,38 @@
     if (el) el.textContent = value;
   }
 
+  function bindCardArt(node, cardId) {
+    const figure = node.querySelector("[data-art-figure]");
+    const img = node.querySelector("[data-art]");
+    if (!figure || !img) return;
+
+    figure.hidden = true;
+    img.onload = null;
+    img.onerror = null;
+    img.removeAttribute("src");
+    if (!cardId) return;
+
+    const token = cardId;
+    const reveal = () => {
+      if (img.dataset.artId !== token) return;
+      if (img.naturalWidth > 0) figure.hidden = false;
+    };
+    const hide = () => {
+      if (img.dataset.artId !== token) return;
+      figure.hidden = true;
+      img.removeAttribute("src");
+    };
+
+    img.dataset.artId = token;
+    img.onload = reveal;
+    img.onerror = hide;
+    img.src = L.artUrl(cardId);
+    if (img.complete) {
+      if (img.naturalWidth > 0) reveal();
+      else hide();
+    }
+  }
+
   function renderCard(card, { kind, today }) {
     const node = template.content.firstElementChild.cloneNode(true);
     const kindEl = node.querySelector("[data-kind]");
@@ -155,6 +187,7 @@
       [card.age_band, card.sex, card.urban_rural].filter(Boolean).join(" · ")
     );
     setText(node, "[data-card-id]", L.cardId(card));
+    bindCardArt(node, L.cardId(card));
 
     const housing = card.housing_energy_water_internet || {};
     setText(node, "[data-field=\"income\"]", L.formatIncomeBand(card.income_or_consumption_ppp_band));

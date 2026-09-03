@@ -121,4 +121,7 @@ assert.ok(bands.has("1500_to_2800_2021ppp"));
 assert.ok(bands.has("830_to_1500_2021ppp"));
 assert.ok(bands.has("above_2800_2021ppp"));
 
+assert.equal(L.artUrl("proto-030"), "art/proto-030.png");
+assert.equal(L.artUrl(""), "");
+
 console.log("ok: prototype draw + education N/A + locked $15/$28 income bands");
