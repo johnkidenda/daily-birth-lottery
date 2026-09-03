@@ -147,6 +147,29 @@
     return INCOME_BAND_NOTES[value] || "";
   }
 
+  /**
+   * Qualitative goods ladder: how many of six icons are in reach
+   * for this PIP band. Not prices. Missing / not_in_pip → 0 (hide row).
+   */
+  function goodsFilledCount(band) {
+    switch (band) {
+      case "below_300_2021ppp":
+        return 1;
+      case "300_to_420_2021ppp":
+        return 2;
+      case "420_to_830_2021ppp":
+        return 3;
+      case "830_to_1500_2021ppp":
+        return 4;
+      case "1500_to_2800_2021ppp":
+        return 5;
+      case "above_2800_2021ppp":
+        return 6;
+      default:
+        return 0;
+    }
+  }
+
   function hasFiniteNumber(value) {
     return typeof value === "number" && Number.isFinite(value);
   }
@@ -240,6 +263,7 @@
     formatToken,
     formatIncomeBand,
     formatIncomeNote,
+    goodsFilledCount,
     formatCountryHdi,
     formatCountryLifeExpectancy,
     formatEducation,

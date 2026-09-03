@@ -15,7 +15,7 @@
       href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,560&family=Source+Sans+3:wght@400;600;650&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/styles.css?v=20260903-citefold" />
+    <link rel="stylesheet" href="css/styles.css?v=20260903-goods" />
   </head>
   <body>
     <div class="page">
@@ -72,6 +72,56 @@
             <dd>
               <span data-field="income"></span>
               <p class="income-note" data-income-note></p>
+              <div class="goods-ladder" data-goods hidden>
+                <ul class="goods-row" role="list">
+                  <li class="goods-item" data-good>
+                    <svg class="goods-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                        d="M4 11h16l-1.2 6.2a2 2 0 0 1-2 1.6H7.2a2 2 0 0 1-2-1.6L4 11zM8 11V9a4 4 0 0 1 8 0v2" />
+                    </svg>
+                    <span class="goods-label">Staple</span>
+                  </li>
+                  <li class="goods-item" data-good>
+                    <svg class="goods-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <ellipse cx="12" cy="13" rx="8" ry="3.2" fill="none" stroke="currentColor" stroke-width="1.6" />
+                      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                        d="M5.2 11.4c.6-2.2 3.4-3.8 6.8-3.8s6.2 1.6 6.8 3.8" />
+                    </svg>
+                    <span class="goods-label">Healthy diet</span>
+                  </li>
+                  <li class="goods-item" data-good>
+                    <svg class="goods-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                        d="M3.5 11.5 12 4l8.5 7.5M6 10.8V20h12v-9.2" />
+                    </svg>
+                    <span class="goods-label">Home</span>
+                  </li>
+                  <li class="goods-item" data-good>
+                    <svg class="goods-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                        d="M4 16h13.5a2 2 0 0 0 2-2v-3.2L16.8 7H8.2L4 10.8V16zM7.2 16v1.8M16.2 16v1.8" />
+                      <circle cx="8" cy="18.4" r="1.2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                      <circle cx="16.5" cy="18.4" r="1.2" fill="none" stroke="currentColor" stroke-width="1.5" />
+                    </svg>
+                    <span class="goods-label">Transport</span>
+                  </li>
+                  <li class="goods-item" data-good>
+                    <svg class="goods-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                        d="M6 5.5h10.5a1.5 1.5 0 0 1 1.5 1.5V19l-6-2.2L6 19V5.5z" />
+                    </svg>
+                    <span class="goods-label">School</span>
+                  </li>
+                  <li class="goods-item" data-good>
+                    <svg class="goods-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                      <path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"
+                        d="M7.2 10.2h9.6v7.2a3 3 0 0 1-3 3H10.2a3 3 0 0 1-3-3v-7.2zM9.4 10.2V8.6a2.6 2.6 0 1 1 5.2 0v1.6M12 13.6v2.2" />
+                    </svg>
+                    <span class="goods-label">Buffer</span>
+                  </li>
+                </ul>
+                <p class="goods-caption">A day’s reach in this prototype, not a shopping list.</p>
+              </div>
             </dd>
           </div>
           <div><dt>Education</dt><dd data-field="education"></dd></div>
@@ -94,7 +144,7 @@
       </article>
     </template>
 
-    <script src="js/lottery.js?v=20260903-citefold"></script>
-    <script src="js/app.js?v=20260903-citefold"></script>
+    <script src="js/lottery.js?v=20260903-goods"></script>
+    <script src="js/app.js?v=20260903-goods"></script>
   </body>
 </html>

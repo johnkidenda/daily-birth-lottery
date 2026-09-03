@@ -163,6 +163,22 @@
     if (img.complete && img.naturalWidth > 0) reveal();
   }
 
+  function bindGoodsLadder(node, band) {
+    const wrap = node.querySelector("[data-goods]");
+    if (!wrap) return;
+    const filled = L.goodsFilledCount(band);
+    if (filled <= 0) {
+      wrap.hidden = true;
+      return;
+    }
+    wrap.hidden = false;
+    wrap.querySelectorAll("[data-good]").forEach((item, index) => {
+      const inReach = index < filled;
+      item.classList.toggle("is-in", inReach);
+      item.classList.toggle("is-out", !inReach);
+    });
+  }
+
   function renderCard(card, { kind, today }) {
     const node = template.content.firstElementChild.cloneNode(true);
     const kindEl = node.querySelector("[data-kind]");
@@ -192,6 +208,7 @@
     setText(node, "[data-income-note]", incomeNote);
     const incomeNoteEl = node.querySelector("[data-income-note]");
     if (incomeNoteEl) incomeNoteEl.hidden = !incomeNote;
+    bindGoodsLadder(node, card.income_or_consumption_ppp_band);
     setText(node, "[data-field=\"education\"]", L.formatEducationForCard(card));
     setText(node, "[data-field=\"occupation\"]", L.formatOccupation(card.occupation_class));
     setText(node, "[data-field=\"household\"]", L.formatHouseholdSize(card.family));
