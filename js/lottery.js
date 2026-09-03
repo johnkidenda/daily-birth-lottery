@@ -113,28 +113,28 @@
   }
 
   const INCOME_BAND_LABELS = {
-    below_300_2021ppp: "under $3",
-    "300_to_420_2021ppp": "$3–$4.20",
-    "420_to_830_2021ppp": "$4.20–$8.30",
-    "830_to_1500_2021ppp": "$8.30–$15",
-    "1500_to_2800_2021ppp": "$15–$28",
-    above_2800_2021ppp: "$28+",
+    below_300_2021ppp: "under $91",
+    "300_to_420_2021ppp": "$91–$128",
+    "420_to_830_2021ppp": "$128–$252",
+    "830_to_1500_2021ppp": "$252–$456",
+    "1500_to_2800_2021ppp": "$456–$852",
+    above_2800_2021ppp: "$852+",
     not_in_pip: "not in World Bank PIP",
   };
 
   const INCOME_BAND_NOTES = {
     below_300_2021ppp:
-      "Extreme poverty by the World Bank’s June 2025 line. A healthy diet averaged $4.46 a day in 2024; even a ~$0.95 staple diet was out of reach for an estimated 860 million people in 2021 once non-food needs were counted.",
+      "Extreme poverty by the World Bank’s June 2025 line. A healthy diet averaged $136 a month in 2024; even a ~$29 staple diet was out of reach for an estimated 860 million people in 2021 once non-food needs were counted.",
     "300_to_420_2021ppp":
-      "Above extreme poverty, below the typical lower-middle-income line. You’re inside the almost one in five people worldwide under $4.20. A day’s whole income still sits under that $4.46 healthy-diet cost, before rent or anything else.",
+      "Above extreme poverty, below the typical lower-middle-income line. You’re inside the almost one in five people worldwide under $128. A month’s whole income still sits under that $136 healthy-diet cost, before rent or anything else.",
     "420_to_830_2021ppp":
-      "Cleared the lower-middle-income line, still below $8.30. Nearly half the world lives under $8.30. The $4.46 diet now fits in a day’s income on paper; among the poorest fifth in richer countries, about 54% of income still goes to non-food first.",
+      "Cleared the lower-middle-income line, still below $252. Nearly half the world lives under $252. The $136 diet now fits in a month’s income on paper; among the poorest fifth in richer countries, about 54% of income still goes to non-food first.",
     "830_to_1500_2021ppp":
-      "Above all three World Bank poverty lines, while about 52% of the world still lives under $10. A thick slice of Brazil and China (China’s 2021 median is $13.39).",
+      "Above all three World Bank poverty lines, while about 52% of the world still lives under $304. A thick slice of Brazil and China (China’s 2021 median is $407).",
     "1500_to_2800_2021ppp":
-      "Above Brazil’s and China’s medians, still inside the 81% of the world under $30. Below the $28 prosperity standard. 12% of the US sat below $28 in 2023.",
+      "Above Brazil’s and China’s medians, still inside the 81% of the world under $913. Below the $852 prosperity standard. 12% of the US sat below $852 in 2023.",
     above_2800_2021ppp:
-      "At or above the prosperity standard. Neighborhood of Norway / US / Iceland medians ($78 / $70 / $61). Not “no one is poor”: 3%, 12%, and 5% of those countries still fall under $28.",
+      "At or above the prosperity standard. Neighborhood of Norway / US / Iceland medians ($2,373 / $2,129 / $1,855). Not “no one is poor”: 3%, 12%, and 5% of those countries still fall under $852.",
     not_in_pip: "No PIP estimate. We don’t fill with a neighbor.",
   };
 

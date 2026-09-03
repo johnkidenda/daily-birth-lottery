@@ -100,17 +100,23 @@ const adult = live.find((c) => c.education && c.education.highest);
 assert.ok(adult);
 assert.equal(L.formatEducationForCard(adult), L.formatEducation(adult.education));
 
-assert.equal(L.formatIncomeBand("below_300_2021ppp"), "under $3");
-assert.equal(L.formatIncomeBand("300_to_420_2021ppp"), "$3–$4.20");
-assert.equal(L.formatIncomeBand("420_to_830_2021ppp"), "$4.20–$8.30");
-assert.equal(L.formatIncomeBand("830_to_1500_2021ppp"), "$8.30–$15");
-assert.equal(L.formatIncomeBand("1500_to_2800_2021ppp"), "$15–$28");
-assert.equal(L.formatIncomeBand("above_2800_2021ppp"), "$28+");
+assert.equal(L.formatIncomeBand("below_300_2021ppp"), "under $91");
+assert.equal(L.formatIncomeBand("300_to_420_2021ppp"), "$91–$128");
+assert.equal(L.formatIncomeBand("420_to_830_2021ppp"), "$128–$252");
+assert.equal(L.formatIncomeBand("830_to_1500_2021ppp"), "$252–$456");
+assert.equal(L.formatIncomeBand("1500_to_2800_2021ppp"), "$456–$852");
+assert.equal(L.formatIncomeBand("above_2800_2021ppp"), "$852+");
 assert.equal(L.formatIncomeBand("not_in_pip"), "not in World Bank PIP");
 assert.equal(L.formatIncomeBand(null), L.UNAVAILABLE);
-assert.ok(L.formatIncomeNote("1500_to_2800_2021ppp").includes("$28 prosperity standard"));
+assert.equal(
+  L.formatIncomeNote("below_300_2021ppp"),
+  "Extreme poverty by the World Bank’s June 2025 line. A healthy diet averaged $136 a month in 2024; even a ~$29 staple diet was out of reach for an estimated 860 million people in 2021 once non-food needs were counted."
+);
+assert.ok(L.formatIncomeNote("1500_to_2800_2021ppp").includes("$852 prosperity standard"));
 assert.ok(L.formatIncomeNote("above_2800_2021ppp").includes("At or above the prosperity standard"));
+assert.ok(L.formatIncomeNote("above_2800_2021ppp").includes("$2,373 / $2,129 / $1,855"));
 assert.ok(!L.formatIncomeNote("above_2800_2021ppp").includes("29.43"));
+assert.ok(!L.formatIncomeNote("above_2800_2021ppp").includes("$28"));
 assert.equal(L.formatIncomeNote("not_in_pip"), "No PIP estimate. We don’t fill with a neighbor.");
 assert.equal(L.goodsFilledCount("below_300_2021ppp"), 1);
 assert.equal(L.goodsFilledCount("300_to_420_2021ppp"), 2);
