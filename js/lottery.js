@@ -86,6 +86,11 @@
     return card && card.card_id ? card.card_id : "";
   }
 
+  function artUrl(cardId) {
+    if (!cardId) return "";
+    return `art/${cardId}.png`;
+  }
+
   function isPlaceholderCard(card) {
     if (!card) return true;
     if (String(card.card_id || "").startsWith("placeholder-")) return true;
@@ -229,6 +234,7 @@
     prototypeUniverse,
     drawOnce,
     cardId,
+    artUrl,
     isPlaceholderCard,
     formatFlag,
     formatToken,
