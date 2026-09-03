@@ -59,29 +59,6 @@ for (let i = 0; i < 200; i += 1) {
   assert.equal(card.country_iso3, country.iso3);
 }
 
-const cardsPath = join(root, "data/cards.json");
-assert.ok(existsSync(cardsPath));
-const live = L.normalizeCatalog(loadJson(cardsPath));
-const protoLive = live.filter((c) => String(c.card_id || "").startsWith("proto-"));
-if (protoLive.length !== 50) {
-  console.log(
-    `ok: prototype draw. live data/cards.json is not the 50-card proto deck yet (${live.length} cards, ${protoLive.length} proto-*).`
-  );
-  process.exit(0);
-}
-
-assert.equal(live.length, 50);
-assert.ok(live.every((c) => String(c.card_id).startsWith("proto-")));
-assert.ok(!live.some((c) => String(c.card_id).startsWith("placeholder-")));
-const liveProto = L.prototypeUniverse(countries, live);
-assert.equal(liveProto.universe.length, 10);
-assert.equal(
-  liveProto.universe
-    .map((c) => c.iso3)
-    .sort()
-    .join(","),
-  "BGD,BRA,BRN,CHN,ETH,IND,ISL,NGA,NOR,USA"
-);
 const na = "not applicable (UIS is ages 25+)";
 for (const band of ["0-4", "5-14", "15-24"]) {
   assert.equal(
@@ -93,12 +70,6 @@ assert.equal(
   L.formatEducationForCard({ age_band: "25-34", education: { highest: "secondary" } }),
   "secondary"
 );
-const young = live.find((c) => ["0-4", "5-14", "15-24"].includes(c.age_band) && !c.education);
-assert.ok(young, "catalog should include a 0–24 card with null education");
-assert.equal(L.formatEducationForCard(young), na);
-const adult = live.find((c) => c.education && c.education.highest);
-assert.ok(adult);
-assert.equal(L.formatEducationForCard(adult), L.formatEducation(adult.education));
 
 assert.equal(L.formatIncomeBand("below_300_2021ppp"), "under $91");
 assert.equal(L.formatIncomeBand("300_to_420_2021ppp"), "$91–$128");
@@ -127,17 +98,128 @@ assert.equal(L.goodsFilledCount("above_2800_2021ppp"), 6);
 assert.equal(L.goodsFilledCount("not_in_pip"), 0);
 assert.equal(L.goodsFilledCount(null), 0);
 assert.equal(L.goodsFilledCount(""), 0);
-const brn = live.find((c) => c.country_iso3 === "BRN");
-assert.ok(brn);
-assert.equal(brn.income_or_consumption_ppp_band, "not_in_pip");
-assert.equal(L.formatIncomeBand(brn.income_or_consumption_ppp_band), "not in World Bank PIP");
-assert.equal(L.goodsFilledCount(brn.income_or_consumption_ppp_band), 0);
-const bands = new Set(live.map((c) => c.income_or_consumption_ppp_band));
-assert.ok(bands.has("1500_to_2800_2021ppp"));
-assert.ok(bands.has("830_to_1500_2021ppp"));
-assert.ok(bands.has("above_2800_2021ppp"));
 
 assert.equal(L.artUrl("proto-030"), "art/proto-030.png");
 assert.equal(L.artUrl(""), "");
 
-console.log("ok: prototype draw + education N/A + locked $15/$28 income bands");
+const TEN_COUNTRY =
+  "BGD,BRA,BRN,CHN,ETH,IND,ISL,NGA,NOR,USA";
+const THIRTY_COUNTRY = [
+  "BGD",
+  "BRA",
+  "BRN",
+  "CHN",
+  "ETH",
+  "IND",
+  "ISL",
+  "NGA",
+  "NOR",
+  "USA",
+  "AFG",
+  "COD",
+  "DEU",
+  "EGY",
+  "HTI",
+  "IDN",
+  "JPN",
+  "MEX",
+  "MWI",
+  "PAK",
+  "PHL",
+  "PSE",
+  "QAT",
+  "TON",
+  "TUR",
+  "TWN",
+  "UKR",
+  "VCT",
+  "VNM",
+  "XKX",
+]
+  .slice()
+  .sort()
+  .join(",");
+
+const cardsPath = join(root, "data/cards.json");
+assert.ok(existsSync(cardsPath));
+const live = L.normalizeCatalog(loadJson(cardsPath));
+const protoLive = live.filter((c) => String(c.card_id || "").startsWith("proto-"));
+const protoCount = protoLive.length;
+const liveProto = L.prototypeUniverse(countries, live);
+
+function assertBrnNotInPip(cards) {
+  const brn = cards.find((c) => c.country_iso3 === "BRN");
+  assert.ok(brn);
+  assert.equal(brn.income_or_consumption_ppp_band, "not_in_pip");
+  assert.equal(L.formatIncomeBand(brn.income_or_consumption_ppp_band), "not in World Bank PIP");
+  assert.equal(L.goodsFilledCount(brn.income_or_consumption_ppp_band), 0);
+}
+
+function assertLiveEducation(cards) {
+  const young = cards.find((c) => ["0-4", "5-14", "15-24"].includes(c.age_band) && !c.education);
+  assert.ok(young, "catalog should include a 0–24 card with null education");
+  assert.equal(L.formatEducationForCard(young), na);
+  const adult = cards.find((c) => c.education && c.education.highest);
+  assert.ok(adult);
+  assert.equal(L.formatEducationForCard(adult), L.formatEducation(adult.education));
+}
+
+if (protoCount === 50) {
+  assert.equal(live.length, 50);
+  assert.ok(live.every((c) => String(c.card_id).startsWith("proto-")));
+  assert.ok(!live.some((c) => String(c.card_id).startsWith("placeholder-")));
+  assert.equal(liveProto.universe.length, 10);
+  assert.equal(
+    liveProto.universe
+      .map((c) => c.iso3)
+      .sort()
+      .join(","),
+    TEN_COUNTRY
+  );
+  assertLiveEducation(live);
+  assertBrnNotInPip(live);
+  const bands = new Set(live.map((c) => c.income_or_consumption_ppp_band));
+  assert.ok(bands.has("1500_to_2800_2021ppp"));
+  assert.ok(bands.has("830_to_1500_2021ppp"));
+  assert.ok(bands.has("above_2800_2021ppp"));
+} else if (protoCount === 150) {
+  assert.equal(live.length, 150);
+  assert.ok(live.every((c) => String(c.card_id).startsWith("proto-")));
+  assert.ok(!live.some((c) => String(c.card_id).startsWith("placeholder-")));
+  const expectedIds = Array.from({ length: 150 }, (_, i) => `proto-${String(i + 1).padStart(3, "0")}`);
+  const liveIds = live.map((c) => c.card_id);
+  assert.deepEqual([...liveIds].sort(), [...expectedIds].sort());
+  const first50 = expectedIds.slice(0, 50);
+  assert.ok(
+    first50.every((id) => liveIds.includes(id)),
+    "first 50 proto ids must still be present"
+  );
+  assert.equal(liveProto.universe.length, 30);
+  assert.equal(
+    liveProto.universe
+      .map((c) => c.iso3)
+      .sort()
+      .join(","),
+    THIRTY_COUNTRY
+  );
+  for (const iso3 of ["VCT", "AFG"]) {
+    const rows = live.filter((c) => c.country_iso3 === iso3);
+    assert.ok(rows.length > 0, `${iso3} must have cards`);
+    for (const card of rows) {
+      assert.equal(card.income_or_consumption_ppp_band, "not_in_pip");
+      assert.equal(L.goodsFilledCount(card.income_or_consumption_ppp_band), 0);
+    }
+  }
+  assertLiveEducation(live);
+  assertBrnNotInPip(live);
+} else {
+  assert.fail(
+    `data/cards.json proto count must be 50 or 150, got ${protoCount} proto-* (${live.length} cards)`
+  );
+}
+
+console.log(
+  protoCount === 150
+    ? "ok: prototype draw + 150-card / 30-country catalog + education N/A + locked monthly PIP"
+    : "ok: prototype draw + education N/A + locked $15/$28 income bands"
+);
